@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load static %}
+{% load item_tags %}
+
+
+{% block content %}
+
+
+    <!-- Banner Area Start-->
+    <section class="banner-area">
+        <div class="banner-slider owl-carousel">
+            <div class="item" style="background: url({% static 'assets/img/banner/slider-1.jpg' %})">
+                <div class="banner-inner">
+                    <h4>Fashion</h4>
+                    <h2>Dining Room Reveal</h2>
+                    <a href="single.html" class="btn readmore-button">Read more</a>
+                </div>
+            </div>
+            <div class="item" style="background: url({% static 'assets/img/banner/slider-2.jpg' %})">
+                <div class="banner-inner">
+                    <h4>Fashion</h4>
+                    <h2>Dining Room Reveal</h2>
+                    <a href="single.html" class="btn readmore-button">Read more</a>
+                </div>
+            </div>
+            <div class="item" style="background: url({% static 'assets/img/banner/slider-1.jpg' %})">
+                <div class="banner-inner">
+                    <h4>Fashion</h4>
+                    <h2>Dining Room Reveal</h2>
+                    <a href="single.html" class="btn readmore-button">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Area End -->
+    <section class="latest-post-area pd-top-115 pd-bottom-110">
+        <div class="container">
+            <div class="row">
+                {% for post in post_list %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="thumb pb-lg-3 pb-5">
+                            {% if not post.imageURL %}
+                                <img class="w-100" src="{% static 'assets/img/post/1.jpg' %}" alt="img"
+                                     style="height: 300px; ">
+                            {% else %}
+                                <img class="w-100" src="{{ post.imageURL }}" alt="img"
+                                     style="height: 300px; ">
+                            {% endif %}
+                        </div>
+                        <div class="blog-post-item-wrap">
+                            <div class="post-content">
+                                <h4><a href="{{ post.get_absolute_url }}">{{ post.name }}</a></h4>
+                                <p>{{ post.description|truncatewords:10 }}</p>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li>By</li>
+                                        <li><a href="#">Student</a></li>
+                                        <li>{{ post.timestamp|timesince }} ago</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+                <div class="col-lg-12 text-center mt-5">
+                    {% if is_paginated %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="pagination justify-content-center">
+                                    {% if page_obj.has_previous %}
+                                        <li class="page-item">
+                                            <a class="page-link"
+                                               href="{% paginate_url page_obj.previous_page_number 'page' request.GET.urlencode %}"
+                                               aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-disabled="true"
+                                               aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                    {% get_proper_elided_page_range paginator page_obj.number as page_range %}
+                                    {% for i in page_range %}
+                                        {% if page_obj.number == i %}
+                                            <li class="page-item active" aria-current="page"
+                                                style="background-color: #199794">
+                                                <a class="page-link" href="#"
+                                                   style="background-color: #199794;text-decoration-color: white">
+                                                    {{ i }}
+                                                    <span class="sr-only">(current)</span>
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   href="{% paginate_url i 'page' request.GET.urlencode %}">
+                                                    {{ i }}
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if page_obj.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link"
+                                               href="{% paginate_url page_obj.next_page_number 'page' request.GET.urlencode %}"
+                                               aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-disabled="true" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

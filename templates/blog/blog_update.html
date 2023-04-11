@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block title %} blog update page{% endblock title %}
+
+
+{% block head_extra %}
+    {{ form.media }}
+{% endblock head_extra %}
+
+
+{% block content %}
+
+    <div class="row mt-5 text-dark font-weight-bolder justify-content-center">
+        <div class="col-md-12 col-lg-8 mx-auto">
+            <div class="card border-0 shadow">
+                <div class="card-body p-5">
+                    <h3 class="card-title text-center font-weight-bolder mb-4 ">Update Post</h3>
+                    <form class="form-control" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn btn-primary btn-block mt-4">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+{% block script %}
+{% endblock %}
+
