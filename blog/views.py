@@ -1,18 +1,21 @@
+import time
+
 from django.contrib import messages
-from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views import View
 from django.views.generic import ListView, DetailView, DeleteView
 
 from .forms import PostCreateForm
 from .models import Post
-from .utils import get_read_time, get_contents, query_items
+from .utils import get_contents, query_items
 
 
 # Create your views here.
 
 def generate_post(request):
     for item in get_contents():
+        time.sleep(5)
         post, created = Post.objects.get_or_create(
             name=item
         )
@@ -69,3 +72,8 @@ def update_post_view(request, slug=None):
 class DeletePostView(DeleteView):
     model = Post
     success_url = '/'
+
+
+class AboutView(View):
+    def get(self, request):
+        return render(request, "about.html")

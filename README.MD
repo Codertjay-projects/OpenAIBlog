@@ -24,3 +24,12 @@ Install Requirements.txt
 ### runserver
 
 `python manage.py runserver`
+
+### About me Image
+
+replace the about-me.jpg to your image
+`staticfiles/assets/img/about-me.jpg`
+
+### Logo Image
+
+`staticfiles/assets/img/logo.png`
