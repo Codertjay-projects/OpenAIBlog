@@ -4,10 +4,9 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-admin_url = config('ADMIN_URL', default='gimsap_admin_dont_url')
 urlpatterns = [
     path('', include('blog.urls'), name='blog'),
-    path(f'{admin_url}/', admin.site.urls, name='admin'),
+    path('ad_dont_url/admin/', admin.site.urls, name='admin'),
 ]
 
 if settings.DEBUG:

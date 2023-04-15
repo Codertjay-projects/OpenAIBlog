@@ -7,6 +7,45 @@ from django.urls import reverse
 from blog.utils import get_read_time, create_slug, create_description
 
 
+class Album(models.Model):
+    """
+    this contains list of  spotlight
+    """
+    name = models.CharField(max_length=250)
+    image = models.ImageField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    @property
+    def imageURL(self):
+        try:
+            image = self.image.url
+        except:
+            image = ''
+        return image
+
+    def get_absolute_url(self):
+        return reverse('blog:album', kwargs={'pk': self.pk})
+
+
+class Spotlight(models.Model):
+    """
+    this is used to create spotlight
+    """
+    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    name = models.CharField(max_length=250)
+    image = models.ImageField(blank=True, null=True)
+    link = models.URLField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    @property
+    def imageURL(self):
+        try:
+            image = self.image.url
+        except:
+            image = ''
+        return image
+
+
 class Post(models.Model):
     name = models.CharField(max_length=1000)
     slug = models.SlugField(unique=True, max_length=500)
@@ -35,3 +74,5 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(pre_save_post_receiver, sender=Post)
+
+

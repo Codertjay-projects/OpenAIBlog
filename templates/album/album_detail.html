@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <style>
+        /* Album section */
+        .album-image {
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .album-details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .album-title {
+            color: #fff;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .spotlight-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .spotlight-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-weight: bold;
+        }
+
+        .card-text {
+            margin-bottom: 1em;
+        }
+
+        .btn-primary {
+            background-color: #8C73E6;
+            border-color: #8C73E6;
+        }
+
+        .btn-primary:hover {
+            background-color: #7A5EE6;
+            border-color: #7A5EE6;
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <!-- Album section -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="album-image" style="background-image: url({{ album.imageURL }});">
+                    <div class="album-details">
+                        <h2 class="album-title">{{ album.name }}</h2>
+                        <p class="album-description">{{ album.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spotlight section -->
+        <div class="row mt-5  mb-5">
+
+            {% for spotlight in album.spotlight_set.all %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card spotlight-card">
+                        <img src="{{ spotlight.imageURL }}" class="card-img-top" alt="..." style="height: 300px">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ spotlight.name }}</h5>
+                            <p class="card-text">{{ spotlight.description|truncatechars:143 }}</p>
+                            <a href="{{ spotlight.link }}" target="_blank" class="btn btn-primary">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+{% endblock %}
+
+

@@ -7,7 +7,7 @@ from django.views import View
 from django.views.generic import ListView, DetailView, DeleteView
 
 from .forms import PostCreateForm
-from .models import Post
+from .models import Post, Album
 from .utils import get_contents, query_items
 
 
@@ -41,6 +41,12 @@ class BloglistView(ListView):
             queryset = queryset.order_by(*ordering)
 
         return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        album = Album.objects.all()
+        context['albums'] = album
+        return context
 
 
 class BlogDetailView(DetailView):
@@ -77,3 +83,9 @@ class DeletePostView(DeleteView):
 class AboutView(View):
     def get(self, request):
         return render(request, "about.html")
+
+
+class AlbumDetailView(DetailView):
+    template_name = 'album/album_detail.html'
+    model = Album
+    context_object_name = 'album'

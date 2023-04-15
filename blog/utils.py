@@ -102,7 +102,7 @@ def query_items(query, item):
     query = reduce(
         operator.or_,
         (Q(name=x) |
-         Q(decription=x) |
+         Q(description=x) |
          Q(name__in=[x]) for x in query_list)
     )
     object_list = item.filter(query).distinct()

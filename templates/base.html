@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    {% block css %}
 
+    {% endblock %}
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600&family=Lustria&family=Poppins:wght@400;500;600&display=swap"
           rel="stylesheet">
@@ -203,8 +205,12 @@
 <script src="{% static 'assets/js/owl.min.js' %}"></script>
 <script src="{% static 'assets/js/slick-slider.min.js' %}"></script>
 <script src="{% static 'assets/js/wow.min.js' %}"></script>
+
 <!-- main js  -->
 <script src="{% static 'assets/js/main.js' %}"></script>
+{% block script %}
+
+{% endblock %}
 </body>
 
 </html>

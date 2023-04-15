@@ -212,7 +212,7 @@ select:focus {
     padding-right: 0;
 }
 
-.no-gutter>[class^=col-] {
+.no-gutter > [class^=col-] {
     padding-left: 0;
     padding-right: 0;
 }
@@ -273,22 +273,22 @@ code {
     width: 50%;
 }
 
-.comment-navigation .nav-previous>a,
-.posts-navigation .nav-previous>a,
-.post-navigation .nav-previous>a,
-.comment-navigation .nav-next>a,
-.posts-navigation .nav-next>a,
-.post-navigation .nav-next>a {
+.comment-navigation .nav-previous > a,
+.posts-navigation .nav-previous > a,
+.post-navigation .nav-previous > a,
+.comment-navigation .nav-next > a,
+.posts-navigation .nav-next > a,
+.post-navigation .nav-next > a {
     -webkit-transition: 0.3s ease-in;
     transition: 0.3s ease-in;
 }
 
-.comment-navigation .nav-previous:hover>a,
-.posts-navigation .nav-previous:hover>a,
-.post-navigation .nav-previous:hover>a,
-.comment-navigation .nav-next:hover>a,
-.posts-navigation .nav-next:hover>a,
-.post-navigation .nav-next:hover>a {
+.comment-navigation .nav-previous:hover > a,
+.posts-navigation .nav-previous:hover > a,
+.post-navigation .nav-previous:hover > a,
+.comment-navigation .nav-next:hover > a,
+.posts-navigation .nav-next:hover > a,
+.post-navigation .nav-next:hover > a {
     color: var(--main-color);
 }
 
@@ -550,14 +550,14 @@ ul {
     padding: 0.5rem !important;
 }
 
-.custom-gutters-14>.col,
-.custom-gutters-14>[class*=col-] {
+.custom-gutters-14 > .col,
+.custom-gutters-14 > [class*=col-] {
     padding-right: 7px;
     padding-left: 7px;
 }
 
-.custom-gutters-20>.col,
-.custom-gutters-20>[class*=col-] {
+.custom-gutters-20 > .col,
+.custom-gutters-20 > [class*=col-] {
     padding-right: 10px;
     padding-left: 10px;
 }
@@ -1909,7 +1909,7 @@ ul.side-navbar-items li a:hover {
     color: var(--main-color);
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li+li {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li + li {
     margin-left: 24px;
 }
 
@@ -1959,7 +1959,7 @@ ul.side-navbar-items li a:hover {
     background: var(--main-color);
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children:hover>.sub-menu {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;
 }
@@ -2040,17 +2040,17 @@ ul.side-navbar-items li a:hover {
     background: var(--main-color);
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li:hover>a {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li:hover > a {
     color: #fff;
     padding: 10px 20px 10px 30px;
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li:hover>a span {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li:hover > a span {
     background: #fff;
     color: var(--heading-color);
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li:hover>a:before {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li:hover > a:before {
     visibility: visible;
     opacity: 1;
 }
@@ -2078,22 +2078,22 @@ ul.side-navbar-items li a:hover {
     transform: translateY(-50%);
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children>.sub-menu {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children > .sub-menu {
     left: 100%;
     top: 20px;
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children>.sub-menu .sub-menu .sub-menu {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children > .sub-menu .sub-menu .sub-menu {
     left: auto;
     right: 100%;
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children:hover>.sub-menu {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;
 }
 
-.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children:hover>.sub-menu li:hover:before {
+.navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .menu-item-has-children:hover > .sub-menu li:hover:before {
     color: #fff;
 }
 
@@ -2120,7 +2120,7 @@ ul.side-navbar-items li a:hover {
     color: #022334;
 }
 
-.navbar-area .nav-container .main-menu-list li+li {
+.navbar-area .nav-container .main-menu-list li + li {
     margin-left: 20px;
 }
 
@@ -2152,10 +2152,10 @@ ul.side-navbar-items li a:hover {
     transition: all 0.4s ease;
 }
 
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children:hover>.children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children:hover>.children {
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children:hover > .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children:hover > .children {
     visibility: visible;
     opacity: 1;
 }
@@ -2243,18 +2243,18 @@ ul.side-navbar-items li a:hover {
     background: var(--main-color);
 }
 
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu li:hover>a,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children li:hover>a,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu li:hover>a,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children li:hover>a {
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu li:hover > a,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children li:hover > a,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu li:hover > a,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children li:hover > a {
     color: #fff;
     padding: 10px 20px 10px 30px;
 }
 
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu li:hover>a:before,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children li:hover>a:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu li:hover>a:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children li:hover>a:before {
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu li:hover > a:before,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children li:hover > a:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu li:hover > a:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children li:hover > a:before {
     visibility: visible;
     opacity: 1;
 }
@@ -2299,86 +2299,86 @@ ul.side-navbar-items li a:hover {
     transform: translateY(-50%);
 }
 
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children>.sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children > .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children>.sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children > .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children>.sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children > .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children>.sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children > .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children>.sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children > .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children>.sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children > .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children>.sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children > .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children>.sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children > .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children .children {
     left: 100%;
     top: 20px;
 }
 
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children>.sub-menu .sub-menu .sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children>.sub-menu .sub-menu .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children>.sub-menu .children .sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children>.sub-menu .children .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children > .sub-menu .sub-menu .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children > .sub-menu .sub-menu .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children > .sub-menu .children .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children > .sub-menu .children .children,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children .children .sub-menu .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children .children .sub-menu .children,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children .children .children .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children .children .children .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children>.sub-menu .sub-menu .sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children>.sub-menu .sub-menu .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children>.sub-menu .children .sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children>.sub-menu .children .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children > .sub-menu .sub-menu .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children > .sub-menu .sub-menu .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children > .sub-menu .children .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children > .sub-menu .children .children,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children .children .sub-menu .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children .children .sub-menu .children,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children .children .children .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children .children .children .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children>.sub-menu .sub-menu .sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children>.sub-menu .sub-menu .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children>.sub-menu .children .sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children>.sub-menu .children .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children > .sub-menu .sub-menu .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children > .sub-menu .sub-menu .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children > .sub-menu .children .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children > .sub-menu .children .children,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children .children .sub-menu .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children .children .sub-menu .children,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children .children .children .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children .children .children .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children>.sub-menu .sub-menu .sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children>.sub-menu .sub-menu .children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children>.sub-menu .children .sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children>.sub-menu .children .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children > .sub-menu .sub-menu .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children > .sub-menu .sub-menu .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children > .sub-menu .children .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children > .sub-menu .children .children,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children .children .sub-menu .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children .children .sub-menu .children,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children .children .children .sub-menu,
 .navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children .children .children .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children>.sub-menu .sub-menu .sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children>.sub-menu .sub-menu .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children>.sub-menu .children .sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children>.sub-menu .children .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children > .sub-menu .sub-menu .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children > .sub-menu .sub-menu .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children > .sub-menu .children .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children > .sub-menu .children .children,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children .children .sub-menu .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children .children .sub-menu .children,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children .children .children .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children .children .children .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children>.sub-menu .sub-menu .sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children>.sub-menu .sub-menu .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children>.sub-menu .children .sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children>.sub-menu .children .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children > .sub-menu .sub-menu .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children > .sub-menu .sub-menu .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children > .sub-menu .children .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children > .sub-menu .children .children,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children .children .sub-menu .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children .children .sub-menu .children,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children .children .children .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children .children .children .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children>.sub-menu .sub-menu .sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children>.sub-menu .sub-menu .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children>.sub-menu .children .sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children>.sub-menu .children .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children > .sub-menu .sub-menu .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children > .sub-menu .sub-menu .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children > .sub-menu .children .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children > .sub-menu .children .children,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children .children .sub-menu .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children .children .sub-menu .children,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children .children .children .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children .children .children .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children>.sub-menu .sub-menu .sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children>.sub-menu .sub-menu .children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children>.sub-menu .children .sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children>.sub-menu .children .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children > .sub-menu .sub-menu .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children > .sub-menu .sub-menu .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children > .sub-menu .children .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children > .sub-menu .children .children,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children .children .sub-menu .sub-menu,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children .children .sub-menu .children,
 .navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children .children .children .sub-menu,
@@ -2387,42 +2387,42 @@ ul.side-navbar-items li a:hover {
     right: 100%;
 }
 
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children:hover>.children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children:hover>.children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children:hover>.children,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children:hover>.children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children:hover>.children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children:hover>.children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children:hover>.children,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children:hover>.sub-menu,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children:hover>.children {
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children:hover > .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children:hover > .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children:hover > .children,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children:hover > .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children:hover > .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children:hover > .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children:hover > .children,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children:hover > .sub-menu,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children:hover > .children {
     visibility: visible;
     opacity: 1;
 }
 
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children:hover>.sub-menu li:hover:before,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children:hover>.children li:hover:before,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children:hover>.sub-menu li:hover:before,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children:hover>.children li:hover:before,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children:hover>.sub-menu li:hover:before,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children:hover>.children li:hover:before,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children:hover>.sub-menu li:hover:before,
-.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children:hover>.children li:hover:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children:hover>.sub-menu li:hover:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children:hover>.children li:hover:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children:hover>.sub-menu li:hover:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children:hover>.children li:hover:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children:hover>.sub-menu li:hover:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children:hover>.children li:hover:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children:hover>.sub-menu li:hover:before,
-.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children:hover>.children li:hover:before {
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children:hover > .sub-menu li:hover:before,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .menu-item-has-children:hover > .children li:hover:before,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children:hover > .sub-menu li:hover:before,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .sub-menu .page_item_has_children:hover > .children li:hover:before,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children:hover > .sub-menu li:hover:before,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .menu-item-has-children:hover > .children li:hover:before,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children:hover > .sub-menu li:hover:before,
+.navbar-area .nav-container .main-menu-list li.menu-item-has-children .children .page_item_has_children:hover > .children li:hover:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children:hover > .sub-menu li:hover:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .menu-item-has-children:hover > .children li:hover:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children:hover > .sub-menu li:hover:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .sub-menu .page_item_has_children:hover > .children li:hover:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children:hover > .sub-menu li:hover:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .menu-item-has-children:hover > .children li:hover:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children:hover > .sub-menu li:hover:before,
+.navbar-area .nav-container .main-menu-list li.page_item_has_children .children .page_item_has_children:hover > .children li:hover:before {
     color: #fff;
 }
 
@@ -2676,35 +2676,44 @@ ul.side-navbar-items li a:hover {
     .nav-right-part {
         margin-right: 50px;
     }
+
     .nav-right-part .btn {
         height: 42px;
         line-height: 43px;
     }
+
     .nav-right-part .btn .right {
         padding-left: 5px;
         font-size: 13px;
     }
+
     .nav-right-part-mobile {
         display: block;
     }
+
     .nav-right-part-desktop {
         display: none;
     }
+
     .navbar-area .nav-container {
         position: relative;
         z-index: 0;
     }
+
     .navbar-area .nav-container .navbar-toggler {
         padding: 0px;
     }
+
     .navbar-area .nav-container .navbar-collapse {
         margin-top: 13px;
         padding-right: 0;
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav {
         display: block;
         margin-top: 20px;
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav li {
         display: block;
         text-align: left;
@@ -2712,20 +2721,25 @@ ul.side-navbar-items li a:hover {
         padding: 10px 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav li a {
         display: block;
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav li:last-child {
         border-bottom: none;
     }
-    .navbar-area .nav-container .navbar-collapse .navbar-nav li+li {
+
+    .navbar-area .nav-container .navbar-collapse .navbar-nav li + li {
         margin-left: 0;
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children:before {
         top: 25px;
         right: -1px !important;
         z-index: -1;
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu {
         position: initial;
         display: block;
@@ -2749,17 +2763,21 @@ ul.side-navbar-items li a:hover {
         visibility: visible;
         opacity: 1;
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu .sub-menu .menu-item-has-children:before {
         content: "";
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li {
         padding: 0;
     }
+
     .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li.menu-item-has-children:hover:before {
         top: 30px;
         color: #fff;
     }
-    .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li+li {
+
+    .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children .sub-menu li + li {
         border-top: none;
     }
 }
@@ -2768,14 +2786,17 @@ ul.side-navbar-items li a:hover {
     .navbar-area .nav-container .logo a img {
         width: 125px;
     }
+
     .nav-right-part {
         margin-right: 30px;
         right: 0;
     }
+
     .nav-right-part .btn {
         font-size: 13px;
         padding: 0 10px;
     }
+
     .responsive-mobile-menu {
         right: 0;
         top: 19px;
@@ -2808,7 +2829,7 @@ ul.side-navbar-items li a:hover {
 
 .banner-inner {
     text-align: center;
-    padding: 140px 0;
+    padding: 20px;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -2836,8 +2857,8 @@ ul.side-navbar-items li a:hover {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
-    font-size: 39px;
-    margin: 28px 0 44px 0;
+    font-size: 30px;
+    margin: 10px 0 15px 0;
 }
 
 .banner-slider-2 .owl-dots,

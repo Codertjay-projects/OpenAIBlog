@@ -5,7 +5,6 @@
 
 {% block content %}
 
-
     <!-- Banner Area Start-->
     <section class="banner-area">
         <div class="banner-slider owl-carousel">
@@ -132,4 +131,43 @@
         </div>
     </section>
 
+    <section class="banner-area">
+        <div class="banner-slider-2 owl-carousel owl-loaded owl-drag">
+
+
+            <div class="owl-stage-outer">
+                <div class="owl-stage"
+                     style="transform: translate3d(-909px, 0px, 0px); transition: all 0s ease 0s; width: 2121px;">
+                    {% for album in albums %}
+
+                        <div class="owl-item cloned" style="width: 283px; margin-right: 20px;">
+                            <div class="item" style="background: url({{ album.imageURL }});background-size: cover">
+                                <div class="banner-inner" style="max-height: 200px">
+                                    <h4>{{ album.name }}</h4>
+                                    <h2>{{ album.description|truncatewords:3 }}</h2>
+                                    <a href="{{ album.get_absolute_url }}" target="_blank" class="btn readmore-button">Read
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+            <div class="owl-nav">
+                <button type="button" role="presentation" class="owl-prev">
+                    <i class="fa fa-angle-left"></i></button>
+                <button type="button" role="presentation" class="owl-next">
+                    <i class="fa fa-angle-right"></i></button>
+            </div>
+            <div class="owl-dots">
+                <button role="button" class="owl-dot active"><span></span></button>
+                <button role="button" class="owl-dot"><span></span></button>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
+

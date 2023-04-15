@@ -80,7 +80,7 @@
             nav: true,
             dots: true,
             items: 1,
-            smartSpeed: 1500,
+            smartSpeed: 800,
             navText: [leftAngle, rightAngle],
         })
 
@@ -91,7 +91,7 @@
             dots: true,
             margin: 20,
             items: 3,
-            smartSpeed: 1500,
+            smartSpeed: 500,
             navText: [leftAngle, rightAngle],
             responsive: {
                 0: {
