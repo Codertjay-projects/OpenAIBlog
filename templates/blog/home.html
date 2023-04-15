@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load static %}
+{% load item_tags %}
+
+
+{% block content %}
+
+    <!-- Banner Area Start-->
+    <section class="banner-area">
+        <div class="banner-slider owl-carousel">
+            <div class="item" style="background: url({% static 'assets/img/banner/slider-1.jpg' %})">
+                <div class="banner-inner" style="padding: 100px 0 !important;">
+                    <h4>Fashion</h4>
+                    <h2>Dining Room Reveal</h2>
+                    <a href="{% url "blog:about" %}" class="btn readmore-button">Read more</a>
+                </div>
+            </div>
+            <div class="item" style="background: url({% static 'assets/img/banner/slider-2.jpg' %})">
+                <div class="banner-inner" style="padding: 100px 0 !important;">
+                    <h4>Fashion</h4>
+                    <h2>Dining Room Reveal</h2>
+                    <a href="{% url "blog:about" %}" class="btn readmore-button">Read more</a>
+                </div>
+            </div>
+            <div class="item" style="background: url({% static 'assets/img/banner/slider-1.jpg' %})">
+                <div class="banner-inner" style="padding: 100px 0 !important;">
+                    <h4>Fashion</h4>
+                    <h2>Dining Room Reveal</h2>
+                    <a href="{% url "blog:about" %}" class="btn readmore-button">Read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container mt-5">
+        <div class="col-lg-12">
+            <div class="section-title">
+                <h6 class="title">HighLights</h6>
+                <a href="#">See All HighLights</a>
+            </div>
+        </div>
+    </div>
+    <section class="banner-area">
+        <div class="banner-slider-2 owl-carousel owl-loaded owl-drag">
+
+
+            <div class="owl-stage-outer">
+                <div class="owl-stage"
+                     style="transform: translate3d(-909px, 0px, 0px); transition: all 0s ease 0s; width: 2121px;">
+                    {% for highlight in highlights %}
+
+                        <div class="owl-item cloned">
+                            <div class="featured-item pd-bottom-30">
+                                <div class="thumb">
+                                    <img src="{{ highlight.imageURL }}" alt="img" style="height: 250px">
+                                </div>
+                                <div class="featured-item-meta">
+                                    <h2>{{ highlight.name }}</h2>
+                                    <ul>
+
+                                        <li>{{ highlight.timestamp }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+            <div class="owl-nav">
+                <button type="button" role="presentation" class="owl-prev">
+                    <i class="fa fa-angle-left"></i></button>
+                <button type="button" role="presentation" class="owl-next">
+                    <i class="fa fa-angle-right"></i></button>
+            </div>
+            <div class="owl-dots">
+                <button role="button" class="owl-dot active"><span></span></button>
+                <button role="button" class="owl-dot"><span></span></button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mt-5">
+        <div class="col-lg-12">
+            <div class="section-title">
+                <h6 class="title">Spotlight</h6>
+                <a href="#">See All Spotlights</a>
+            </div>
+        </div>
+    </div>
+    <section class="banner-area mb-5">
+        <div class="banner-slider-2 owl-carousel owl-loaded owl-drag">
+
+
+            <div class="owl-stage-outer">
+                <div class="owl-stage"
+                     style="transform: translate3d(-909px, 0px, 0px); transition: all 0s ease 0s; width: 2121px;">
+                    {% for album in albums %}
+
+                        <div class="owl-item cloned" style="width: 283px; margin-right: 20px;">
+                            <div class="item" style="background: url({{ album.imageURL }});background-size: cover">
+                                <div class="banner-inner" style="max-height: 200px;padding-bottom: 20px!important;">
+                                    <h4>{{ album.name }}</h4>
+                                    <h2>{{ album.description|truncatewords:3 }}</h2>
+                                    <a href="{{ album.get_absolute_url }}" target="_blank" class="btn readmore-button">Read
+                                        more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+            <div class="owl-nav">
+                <button type="button" role="presentation" class="owl-prev">
+                    <i class="fa fa-angle-left"></i></button>
+                <button type="button" role="presentation" class="owl-next">
+                    <i class="fa fa-angle-right"></i></button>
+            </div>
+            <div class="owl-dots">
+                <button role="button" class="owl-dot active"><span></span></button>
+                <button role="button" class="owl-dot"><span></span></button>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+

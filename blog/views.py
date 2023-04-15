@@ -7,7 +7,7 @@ from django.views import View
 from django.views.generic import ListView, DetailView, DeleteView
 
 from .forms import PostCreateForm
-from .models import Post, Album
+from .models import Post, Album, HighLight
 from .utils import get_contents, query_items
 
 
@@ -26,7 +26,7 @@ class BloglistView(ListView):
     model = Post
     queryset = Post.objects.all()
     template_name = 'blog/blog_list.html'
-    paginate_by = 20
+    paginate_by = 21
 
     def get_queryset(self):
         query = self.request.GET.get('search')
@@ -47,6 +47,12 @@ class BloglistView(ListView):
         album = Album.objects.all()
         context['albums'] = album
         return context
+
+
+class HomeView(View):
+    def get(self, request):
+        return render(request, "blog/home.html", {"albums": Album.objects.all(),
+                                                  "highlights": HighLight.objects.all()})
 
 
 class BlogDetailView(DetailView):

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Album, Spotlight
+from .models import Album, Spotlight, HighLight
 from .models import Post
 
 
@@ -22,3 +22,10 @@ class PostAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
+
+
+@admin.register(HighLight)
+class HighLightAdmin(admin.ModelAdmin):
+    list_display = ('name', 'link', 'timestamp')
+    list_filter = ('timestamp',)
+    search_fields = ('name', 'description')

@@ -14,6 +14,7 @@ class Album(models.Model):
     name = models.CharField(max_length=250)
     image = models.ImageField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     @property
     def imageURL(self):
@@ -36,6 +37,7 @@ class Spotlight(models.Model):
     image = models.ImageField(blank=True, null=True)
     link = models.URLField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     @property
     def imageURL(self):
@@ -76,3 +78,20 @@ def pre_save_post_receiver(sender, instance, *args, **kwargs):
 pre_save.connect(pre_save_post_receiver, sender=Post)
 
 
+class HighLight(models.Model):
+    """
+    this is used to create spotlight
+    """
+    name = models.CharField(max_length=250)
+    image = models.ImageField(blank=True, null=True)
+    link = models.URLField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def imageURL(self):
+        try:
+            image = self.image.url
+        except:
+            image = ''
+        return image
