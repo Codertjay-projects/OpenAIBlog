@@ -45,6 +45,21 @@
     <section id="two">
         <h2>Recent Work</h2>
         <div class="row">
+
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="{% url 'blog:album' album.id %}" class="image fit thumb">
+                    <img src="{{ album.imageURL }}"
+                         alt="" style="height: 250px; "></a>
+                <h3>{{ album.name }}</h3>
+                <p>{{ post.description|truncatewords:8 }}</p>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="{% url 'blog:home' %}" class="image fit thumb">
+                    <img src="{{ highlights.imageURL }}"
+                         alt="" style="height: 250px; "/></a>
+                <h3>{{ highlights.name }}</h3>
+                <p>{{ highlights.description|truncatewords:8 }}</p>
+            </article>
             {% for post in posts %}
                 <article class="col-6 col-12-xsmall work-item">
                     <a href="{{ post.imageURL }}" class="image fit thumb">
@@ -61,21 +76,6 @@
                 </article>
             {% endfor %}
 
-
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% url 'blog:album' album.id %}" class="image fit thumb">
-                    <img src="{{ album.imageURL }}"
-                         alt="" style="height: 250px; "></a>
-                <h3>{{ album.name }}</h3>
-                <p>{{ post.description|truncatewords:8 }}</p>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% url 'blog:home' %}" class="image fit thumb">
-                    <img src="{{ highlights.imageURL }}"
-                         alt="" style="height: 250px; "/></a>
-                <h3>{{ highlights.name }}</h3>
-                <p>{{ highlights.description|truncatewords:8 }}</p>
-            </article>
 
         </div>
         <ul class="actions">
