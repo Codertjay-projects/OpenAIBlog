@@ -50,8 +50,7 @@
                     <a href="{% url 'blog:album' item.id %}" class="image fit thumb">
                         <img src="{{ item.imageURL }}"
                              alt="" style="height: 250px; "></a>
-                    <h3>{{ item.name }}</h3>
-                    <p>{{ item.description|truncatewords:8 }}</p>
+                    <h3><a href="{% url 'blog:album' item.id %}">{{ item.name }}</a></h3>
                 </article>
 
             {% endfor %}
@@ -66,8 +65,8 @@
                                  style="height: 250px; ">
                         {% endif %}
                     </a>
-                    <h3>{{ post.name }}</h3>
-                    <p>{{ post.description|truncatewords:8 }}</p>
+                    <h3><a href="{% url "blog:blog_detail" post.slug %}">{{ post.name }}</a></h3>
+
                 </article>
             {% endfor %}
 
