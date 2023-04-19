@@ -101,8 +101,8 @@ def query_items(query, item):
     query_list = sorted(query_list, key=lambda x: x[-1])
     query = reduce(
         operator.or_,
-        (Q(name=x) |
-         Q(description=x) |
+        (Q(name__icontains=x) |
+         Q(description__icontains=x) |
          Q(name__in=[x]) for x in query_list)
     )
     object_list = item.filter(query).distinct()

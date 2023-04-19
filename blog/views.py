@@ -26,7 +26,7 @@ class HomeAboutPageView(View):
     def get(self, request):
         context = {
             "posts": Post.objects.all()[:2],
-            "album": Album.objects.first(),
+            "albums": Album.objects.all()[:2],
             "highlights": HighLight.objects.first(),
         }
         return render(request, "index.html", context)

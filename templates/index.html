@@ -18,8 +18,8 @@
 <header id="header">
     <div class="inner" style="text-align:left ">
         <a href="#" class="image avatar"><img src="{% static 'assets/img/avatar.jpeg' %}" alt=""/></a>
-        <h1 style="text-align:left "><strong> I'm Taylor</strong>, responsive site template freebie.<br/>
-            Mom of 5, best friend to my husband AND certified adventure seeker. Big or small, life changing
+        <h1 style="text-align:left "><strong> I'm Taylor</strong>. Mom of 5,
+            best friend to my husband AND certified adventure seeker. Big or small, life changing
             or simply living in a moment I want to do it all.
         </h1>
     </div>
@@ -46,22 +46,16 @@
     <section id="two">
         <h2>Recent Work</h2>
         <div class="row">
+            {% for item in albums %}
+                <article class="col-6 col-12-xsmall ">
+                    <a href="{% url 'blog:album' item.id %}" class="image fit thumb">
+                        <img src="{{ item.imageURL }}"
+                             alt="" style="height: 250px; "></a>
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description|truncatewords:8 }}</p>
+                </article>
 
-            <article class="col-6 col-12-xsmall ">
-                <a href="{% url 'blog:album' album.id %}" class="image fit thumb">
-                    <img src="{{ album.imageURL }}"
-                         alt="" style="height: 250px; "></a>
-                <h3>{{ album.name }}</h3>
-                <p>{{ post.description|truncatewords:8 }}</p>
-            </article>
-
-            <article class="col-6 col-12-xsmall ">
-                <a href="{% url 'blog:home' %}" class="image fit thumb">
-                    <img src="{{ highlights.imageURL }}"
-                         alt="" style="height: 250px; "/></a>
-                <h3>{{ highlights.name }}</h3>
-                <p>{{ highlights.description|truncatewords:8 }}</p>
-            </article>
+            {% endfor %}
             {% for post in posts %}
                 <article class="col-6 col-12-xsmall ">
                     <a href="{% url "blog:blog_detail" post.slug %}" class="image fit thumb">
@@ -88,8 +82,9 @@
     <!-- Three -->
     <section id="three">
         <h2>Get In Touch</h2>
-        <p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem
-            semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
+        <p>Thank you for visiting our website! We would love to hear from you and learn more about your needs. Please
+            feel free to get in touch with us by phone, email or through our contact form. We look forward to connecting
+            with you and exploring how we can assist you in your endeavors.</p>
         <div class="row">
             <div class="col-8 col-12-small">
                 <form method="post" action="#">
@@ -110,18 +105,14 @@
                 <ul class="labeled-icons">
                     <li>
                         <h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-                        1234 Somewhere Rd.<br/>
-                        Nashville, TN 00000<br/>
-                        United States
+                        Canada
                     </li>
-                    <li>
-                        <h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-                        000-000-0000
-                    </li>
+
                     <li>
                         <h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-                        <a href="#">hello@untitled.tld</a>
+                        <a href="mailto:1000adventureswitht@gmail.com">1000adventureswitht@gmail.com</a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -139,10 +130,7 @@
             <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
             <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
         </ul>
-        <ul class="copyright">
-            <li>&copy; Untitled</li>
-            <li>Design: <a href="{% url 'blog:home' %}">HTML5 UP</a></li>
-        </ul>
+
     </div>
 </footer>
 
