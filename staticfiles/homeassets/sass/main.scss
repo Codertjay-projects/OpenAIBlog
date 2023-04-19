@@ -634,16 +634,7 @@ $size-header-pad: 4em;
 				white-space: nowrap;
 			}
 
-			&:hover {
-				&:after {
-					opacity: 1.0;
-				}
 
-				&:before {
-					background: url('images/overlay.png'), url('images/overlay.png');
-					opacity: 1.0;
-				}
-			}
 		}
 
 		img {
