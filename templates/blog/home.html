@@ -10,22 +10,22 @@
         <div class="banner-slider owl-carousel">
             <div class="item" style="background: url({% static 'assets/img/banner/slider-1.jpg' %})">
                 <div class="banner-inner" style="padding: 100px 0 !important;">
-                    <h4>Fashion</h4>
-                    <h2>Dining Room Reveal</h2>
+                    <h4>I am Favour</h4>
+                    <h2 style="font-size: 10px">I am a developer that love working on different language</h2>
                     <a href="{% url "blog:about" %}" class="btn readmore-button">Read more</a>
                 </div>
             </div>
             <div class="item" style="background: url({% static 'assets/img/banner/slider-2.jpg' %})">
                 <div class="banner-inner" style="padding: 100px 0 !important;">
-                    <h4>Fashion</h4>
-                    <h2>Dining Room Reveal</h2>
+                    <h4>I am Favour</h4>
+                    <h2 style="font-size: 10px">I am a developer that love working on different language</h2>
                     <a href="{% url "blog:about" %}" class="btn readmore-button">Read more</a>
                 </div>
             </div>
             <div class="item" style="background: url({% static 'assets/img/banner/slider-1.jpg' %})">
                 <div class="banner-inner" style="padding: 100px 0 !important;">
-                    <h4>Fashion</h4>
-                    <h2>Dining Room Reveal</h2>
+                    <h4>I am Favour</h4>
+                    <h2 style="font-size: 10px">I am a developer that love working on different language</h2>
                     <a href="{% url "blog:about" %}" class="btn readmore-button">Read more</a>
                 </div>
             </div>
@@ -128,6 +128,60 @@
             </div>
         </div>
     </section>
+
+    <!-- Banner Area End -->
+    <div class="container mt-5">
+        <div class="col-lg-12">
+            <div class="section-title">
+                <h6 class="title">Posts</h6>
+                <a href="{% url 'blog:blog_list' %}">See All Posts</a>
+            </div>
+        </div>
+    </div>
+    <section class="latest-post-area pd-top-115 pd-bottom-110">
+        <div class="container">
+            <div class="row">
+                {% for post in post_list %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="thumb pb-lg-3 pb-5">
+                            {% if not post.imageURL %}
+                                <img class="w-100" src="{% static 'assets/img/post/1.jpg' %}" alt="img"
+                                     style="height: 300px; ">
+                            {% else %}
+                                <img class="w-100" src="{{ post.imageURL }}" alt="img"
+                                     style="height: 300px; ">
+                            {% endif %}
+                        </div>
+                        <div class="blog-post-item-wrap">
+                            <div class="post-content">
+                                <h4><a href="{{ post.get_absolute_url }}">{{ post.name }}</a></h4>
+                                <p>{{ post.description|truncatewords:10 }}</p>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li>By</li>
+                                        <li><a href="#">Student</a></li>
+                                        <li>{{ post.timestamp|timesince }} ago</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+    <div class="container mb-5">
+        <div class="col-lg-12">
+            <div class="align-center d-flex justify-content-center">
+                <a class="btn btn-primary" href="{% url 'blog:blog_list' %}"
+                   style="background-color: #199794 !important;">Load More</a>
+            </div>
+        </div>
+    </div>
+
 
 {% endblock %}
 

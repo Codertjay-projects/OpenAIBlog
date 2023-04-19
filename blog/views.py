@@ -22,6 +22,16 @@ def generate_post(request):
     return redirect("blog:blog_list")
 
 
+class HomeAboutPageView(View):
+    def get(self, request):
+        context = {
+            "posts": Post.objects.all()[:2],
+            "album": Album.objects.first(),
+            "highlights": HighLight.objects.first(),
+        }
+        return render(request, "index.html", context)
+
+
 class BloglistView(ListView):
     model = Post
     queryset = Post.objects.all()
@@ -52,7 +62,10 @@ class BloglistView(ListView):
 class HomeView(View):
     def get(self, request):
         return render(request, "blog/home.html", {"albums": Album.objects.all(),
-                                                  "highlights": HighLight.objects.all()})
+                                                  "highlights": HighLight.objects.all(),
+                                                  "post_list": Post.objects.all()[:6]
+                                                  }
+                      )
 
 
 class BlogDetailView(DetailView):

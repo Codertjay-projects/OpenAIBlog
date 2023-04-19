@@ -62,7 +62,13 @@
     <ul class="side-navbar-items">
         <li class="menu-item-has-children">Home
             <ul class="sub-menu ps-0">
-                <li><a href="{% url "blog:home" %}">Home </a></li>
+                <li><a href="{% url "blog:home_about" %}">Home </a></li>
+
+            </ul>
+        </li>
+        <li class="menu-item-has-children">Highlight
+            <ul class="sub-menu ps-0">
+                <li><a href="{% url "blog:home" %}">Highlight </a></li>
 
             </ul>
         </li>
@@ -104,7 +110,10 @@
             <div class="collapse navbar-collapse" id="themefie_main_menu">
                 <ul class="navbar-nav menu-open text-center">
                     <li class="current-menu-item ">
-                        <a href="{% url "blog:home" %}">Home</a>
+                        <a href="{% url "blog:home_about" %}">Home</a>
+
+                    </li> <li class="current-menu-item ">
+                        <a href="{% url "blog:home" %}">Highlight</a>
 
                     </li>
                     <li class="current-menu-item ">
