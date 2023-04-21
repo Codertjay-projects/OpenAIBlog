@@ -1,5 +1,3 @@
-import time
-
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
@@ -8,17 +6,14 @@ from django.views.generic import ListView, DetailView, DeleteView
 
 from .forms import PostCreateForm
 from .models import Post, Album, HighLight
-from .utils import get_contents, query_items
+from .tasks import auto_get_datas
+from .utils import query_items
 
 
 # Create your views here.
 
 def generate_post(request):
-    for item in get_contents():
-        time.sleep(5)
-        post, created = Post.objects.get_or_create(
-            name=item
-        )
+    auto_get_datas.delay()
     return redirect("blog:blog_list")
 
 

@@ -14,18 +14,26 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from decouple import config
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-43sac*8jh!d3wc-$6wixd^2xcx6t45x5pce3_ikg(skokqcy9w"
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
+if DEBUG == "True":
+    DEBUG = True
+    ALLOWED_HOSTS = ["*"]
 
-ALLOWED_HOSTS = []
+else:
+    DEBUG = False
+    ALLOWED_HOSTS = ["67.205.154.217", "1000adventures.ca"]
 
 # Application definition
 
@@ -38,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "blog",
     'crispy_forms',
+    'django_celery_beat',
 
 ]
 
@@ -75,12 +84,24 @@ WSGI_APPLICATION = "OpenAIBlog.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('POSTGRESDB_NAME', default=''),
+            'USER': config('POSTGRESDB_USER', default=''),
+            'PASSWORD': config('POSTGRESDB_PASSWORD', default=''),
+            'HOST': config('POSTGRESDB_HOST', default=''),
+            'PORT': '',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -131,3 +152,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# celery
+CELERY_ENABLED = True
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
