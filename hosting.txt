@@ -1,0 +1,87 @@
+
+# Gunicorn.service Configuration
+
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/OpenAIBlog
+ExecStart=/root/OpenAIBlog/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          OpenAIBlog.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+
+# Nginx Configuration
+server {
+    listen 80;
+    server_name  1000adventures.ca  67.205.154.217;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /root/OpenAIBlog;
+    }
+    location /media/ {
+        root /root/OpenAIBlog;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/OpenAIBlog /etc/nginx/sites-enabled
+
+
+Celery Configuration systemd confuration in
+sudo nano /etc/systemd/system/celery.service
+
+[Unit]
+Description=Celery Service
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/OpenAIBlog
+ExecStart=/root/OpenAIBlog/venv/bin/celery -A OpenAIBlog worker  --loglevel=info
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reload
+sudo systemctl start celery
+sudo systemctl enable celery
+sudo systemctl status celery
+
+Celery beat
+sudo nano /etc/systemd/system/celerybeat.service
+
+[Unit]
+Description=Celery Beat Service
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/OpenAIBlog
+ExecStart=/root/OpenAIBlog/venv/bin/celery -A OpenAIBlog beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo systemctl daemon-reload
+sudo systemctl start celerybeat
+sudo systemctl enable celerybeat
+sudo systemctl status celerybeat
+

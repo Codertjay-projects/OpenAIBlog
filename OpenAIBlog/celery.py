@@ -1,32 +1,29 @@
+# Set the default Django settings module for the 'celery' program.
 import os
 
 from celery import Celery
 from celery.schedules import crontab
-from django.conf import settings
+from decouple import config
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'OpenAIBlog.settings')
 
-# used redis broker if it exists
 app = Celery('OpenAIBlog', broker="redis://localhost:6379", backend="redis://localhost:6379")
+# used redis for saving task and running task
 
-app.config_from_object('django.conf:settings')
+app.config_from_object('django.conf:settings', namespace='CELERY')
+# Load task modules from all registered Django apps.
+app.autodiscover_tasks()
 
-# Load task modules from all registered Django app configs.
-app.autodiscover_tasks(settings.INSTALLED_APPS)
-BROKER_URL = "redis://localhost:6379"
-broker_url = "redis://localhost:6379"
-app.conf.broker_url = BROKER_URL
-CELERY_BROKER_URL = BROKER_URL
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_TIMEZONE = 'Africa/Lagos'
+app.conf.broker_url = CELERY_BROKER_URL
 
+#  this is used to make an automation either send mail during a specific time
+#  or delete some stuff or more
 app.conf.beat_schedule = {
-    # deleting customer models with no user associated and created over 10 days and no orders
-    'delete_customer_in_active': {
-        'task': 'blog.tasks.auto_get_datas',
-        'schedule': crontab(hour=23, minute=0),
-    },
 }
 
 
-@app.task
-def debug_task():
-    print(f'Request: ')
+@app.task(bind=True)
+def debug_task(self):
+    print(f'Request: {self.request!r}')
