@@ -20,7 +20,7 @@ def generate_post(request):
 class HomeAboutPageView(View):
     def get(self, request):
         context = {
-            "posts": Post.objects.all()[:2],
+            "posts": Post.objects.all().order_by("?")[:2],
             "albums": Album.objects.all()[:2],
             "highlights": HighLight.objects.first(),
         }
